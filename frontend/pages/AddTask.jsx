@@ -44,7 +44,7 @@ const AddTask = () => {
       <div className="m-5" style={{ width: "300px" }}>
         <button
           className="btn btn-secondary mb-3"
-          onClick={() => navigate("/task")}
+          onClick={() => navigate("/home")}
         >
           Go Home
         </button>
