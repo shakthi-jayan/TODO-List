@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom"
 const TaskPage = () => {
   const [tasks, setTasks] = useState([])
   const navigate = useNavigate()
+  const API = "https://todo-list-vflu.onrender.com"
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const res = await fetch("/api/backend/tasks")
+      const res = await fetch(`${API}/tasks`)
       const data = await res.json()
       setTasks(data)
     }
@@ -15,7 +16,7 @@ const TaskPage = () => {
   }, [])
 
   const handleDelete = async (id) => {
-    await fetch(`/api/backend/tasks/delete/${id}`, {
+    await fetch(`${API}/tasks/delete/${id}`, {
       method: "DELETE",
     })
 
@@ -25,7 +26,7 @@ const TaskPage = () => {
   const toggleStatus = async (id, currentStatus) => {
     const newStatus = currentStatus === "completed" ? "pending" : "completed"
 
-    const res = await fetch(`/api/backend/tasks/update/${id}`, {
+    const res = await fetch(`${API}/tasks/update/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
