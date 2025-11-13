@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+const API = "https://todo-list-vflu.onrender.com"
+
 const AddTask = () => {
   const [title, setTitle] = useState("")
   const [status, setStatus] = useState("")
@@ -13,7 +15,7 @@ const AddTask = () => {
     e.preventDefault()
 
     try {
-      const res = await fetch("/api/backend/tasks/add", {
+      const res = await fetch(`${API}/tasks/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -42,7 +44,7 @@ const AddTask = () => {
       <div className="m-5" style={{ width: "300px" }}>
         <button
           className="btn btn-secondary mb-3"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/task")}
         >
           Go Home
         </button>
