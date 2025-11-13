@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+const API = "https://todo-list-vflu.onrender.com"
+
 const TaskPage = () => {
   const [tasks, setTasks] = useState([])
   const navigate = useNavigate()
-  const API = "https://todo-list-vflu.onrender.com"
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -50,16 +51,14 @@ const TaskPage = () => {
       </button>
 
       {tasks.map((task) => (
-        <div key={task._id} className="card m-3" style={{ width: "18rem", margin: "1rem" }}>
+        <div key={task._id} className="card m-3" style={{ width: "18rem" }}>
           <div className="card-body">
             <h5 className="card-title">Title: {task.title}</h5>
 
-            {}
             <div className="form-check form-switch my-2">
               <input
                 className="form-check-input"
                 type="checkbox"
-                role="switch"
                 checked={task.status === "completed"}
                 onChange={() => toggleStatus(task._id, task.status)}
               />
