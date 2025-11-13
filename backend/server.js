@@ -1,13 +1,19 @@
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import express from "express"
+import cors from "cors"
 import { router } from "./routes/taskRoutes.js"
 
 dotenv.config()
 
 const app = express()
+
+app.use(cors())              // <<< MANDATORY for frontend to work
 app.use(express.json())
-app.use('/api/backend/tasks/',router)
+
+// Your actual API route
+app.use("/tasks", router)
+
 const PORT = process.env.PORT || 5000
 const MONGO_URI = process.env.MONGO_URI
 
