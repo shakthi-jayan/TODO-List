@@ -1,10 +1,3 @@
-Here’s a clean, professional **README.md** you can paste directly into your repo.
-No sarcasm, no personality — just a solid project write-up the way recruiters expect it.
-
----
-
-# ✅ **README.md**
-
 # TODO List App
 
 A simple full-stack **Task Management** application built using:
@@ -224,10 +217,4 @@ npm run dev
 
 ---
 
-If you want, I can also generate:
 
-✔ a **screenshots section**
-✔ a **badges section (React, Node, MongoDB, Vercel, Render)**
-✔ a **demo GIF section**
-
-Just tell me.
