@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const API = "https://todo-list-vflu.onrender.com"
+const API = "https://todo-list-8r3s.vercel.app"
 
 const AddTask = () => {
   const [title, setTitle] = useState("")
