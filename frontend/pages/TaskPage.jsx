@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const API = "https://todo-list-8r3s.vercel.app/"
+const API = "https://todo-list-8r3s.vercel.app"
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState([])
